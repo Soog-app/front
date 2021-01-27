@@ -1,42 +1,23 @@
-import React, { useState, useContext } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { Input, Button } from 'react-native-elements';
-import Spacer from '../components/Spaces';
+import React, { useContext } from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native-elements';
 import { Context as AuthContext } from '../context/AuthContext';
+import AuthForm from '../components/AuthForm';
+import Spacer from '../components/Spaces';
 
 const SignUpScreen = ({ navigation }) => {
     const { state, signup } = useContext(AuthContext);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
-    return <View style={ styles.container }>
+    return <View style={styles.container}>
+        <AuthForm
+        errorMessage={state.errorMessage}
+        submitButtonText="S'inscrire"
+        onSubmit={signup}
+        />
         <Spacer>
-            <Input
-                label="Email"
-                value={ email }
-                onChangeText={ setEmail }
-                autoCapitalize="none"
-                autoCorrect={ false }
-            />
-        </Spacer>
-        <Spacer>
-            <Input
-                secureTextEntry
-                label="Mot de passe"
-                value={ password }
-                onChangeText={ setPassword }
-                autoCapitalize="none"
-                autoCorrect={ false }
-            />
-        </Spacer>
-        <Spacer>
-            <Button title="S'inscrire" onPress={() => signup({ email, password })} />
-        </Spacer>
-        <Spacer>
-            <Button
-                title="Se connecter"
-                onPress={() => navigation.navigate('Signin')}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
+                <Text style={styles.link}>Vous avez déjà un compte? Connectez-vous.</Text>
+            </TouchableOpacity>
         </Spacer>
     </View>
 };
@@ -51,6 +32,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center'
+    },
+    link: {
+        color: 'blue'
     }
 });
 
