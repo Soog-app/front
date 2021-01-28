@@ -4,18 +4,14 @@ import {
   createSwitchNavigator
 } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { setNavigator } from './src/navigationRef';
 
-import AccountScreen from './src/screens/AccountScreen';
 import SigninScreen from './src/screens/SigninScreen';
 import SignUpScreen from './src/screens/SignupScreen';
-import TrackDetailScreen from './src/screens/TrackDetailScreen';
-import TrackListScreen from './src/screens/TrackListScreen';
-import TrackCreateScreen from './src/screens/TrackCreateScreen';
 import LoadingScreen from './src/screens/LoadingScreen';
 import { Provider as AuthProvider } from './src/context/AuthContext';
-import MyTabs from './src/components/BottomNav';
+import createMaterialBottomTabNavigator from './src/components/BottomTabNavigator'
+
 
 const switchNavigator = createSwitchNavigator({
   Loading: LoadingScreen,
@@ -23,14 +19,7 @@ const switchNavigator = createSwitchNavigator({
     Signin: SigninScreen,
     Signup: SignUpScreen
   }),
-  mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackListScreen,
-      TrackDetail: TrackDetailScreen,
-    }),
-    TrackCreate: TrackCreateScreen,
-    Account: AccountScreen
-  })
+  mainFlow: createMaterialBottomTabNavigator
 });
 
 const App = createAppContainer(switchNavigator);
