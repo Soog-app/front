@@ -15,6 +15,7 @@ import TrackListScreen from './src/screens/TrackListScreen';
 import TrackCreateScreen from './src/screens/TrackCreateScreen';
 import LoadingScreen from './src/screens/LoadingScreen';
 import { Provider as AuthProvider } from './src/context/AuthContext';
+import MyTabs from './src/components/BottomNav';
 
 const switchNavigator = createSwitchNavigator({
   Loading: LoadingScreen,
