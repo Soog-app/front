@@ -1,16 +1,22 @@
 import React from 'react';
-import { View, StyleSheet, Text, Button } from 'react-native';
+import { ImageBackground, StyleSheet } from 'react-native';
 
-const TrackListScreen = ({ navigation }) => {
-    return <>
-        <Text style={{ fontSize: 48 }}>Track List Screen</Text>
-        <Button
-            title="Go to trackDetail"
-            onPress={() => navigation.navigate('TrackDetail')}
-        />
-    </>
+const TrackListScreen = () => {
+    return (
+            <ImageBackground source={require('../img/logo_soog.png')} style={styles.background}>
+            </ImageBackground>
+    );
 };
 
-const styles = StyleSheet.create({});
+TrackListScreen.navigationOptions = () => {
+    return {
+        headerShown: false,
+    };
+};
 
+const styles = StyleSheet.create({
+    background: {
+            ...StyleSheet.absoluteFillObject
+    }
+});
 export default TrackListScreen;
