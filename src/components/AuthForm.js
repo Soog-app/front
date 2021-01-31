@@ -30,7 +30,7 @@ const AuthForm = ({ errorMessage, onSubmit, submitButtonText }) => {
                 {errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
             </Spacer>
             <Spacer>
-                <Button title={submitButtonText}  buttonStyle={styles.button}  onPress={() => onSubmit({ email, password })} />
+                <Button title={submitButtonText}  buttonStyle={styles.button} onPress={() => onSubmit({ email, password })} />
             </Spacer>
         </>
     );
@@ -53,5 +53,4 @@ const styles = StyleSheet.create({
 });
 
 export default AuthForm;
-
 
