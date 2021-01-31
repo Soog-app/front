@@ -23,7 +23,7 @@ const tryLocalSignin = dispatch => async () => {
 
     if (token) {
         dispatch({ type: 'signin', payload: 'token'});
-        navigate('TrackList');
+        navigate('TrackCreate');
     } else {
         navigate('Signin');
     }
@@ -39,7 +39,7 @@ const signup = dispatch => async ({ email, password }) => {
         await AsyncStorage.setItem('token', response.data.token);
 
         dispatch({ type: 'signin', payload: response.data.token });
-        navigate('TrackList');
+        navigate('TrackCreate');
     } catch (err) {
         dispatch({ type: 'add_error', payload: "Erreur lors de l'inscription" })
     }
@@ -51,7 +51,7 @@ const signin = dispatch => async ({ email, password }) => {
         await AsyncStorage.setItem('token', response.data.token);
 
         dispatch({ type: 'signin', payload: response.data.token });
-        navigate('TrackList');
+        navigate('TrackCreate');
     } catch (err) {
         dispatch({ type: 'add_error', payload: "Erreur lors de la connexion." })
     }
