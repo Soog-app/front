@@ -21,7 +21,6 @@ const AccountScreen = () => {
         
 };
 const styles = StyleSheet.create({
-    
     button: {  
        backgroundColor: '#dc143c',
        borderColor: '#f08080',
