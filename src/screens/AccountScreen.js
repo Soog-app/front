@@ -18,7 +18,6 @@ const AccountScreen = () => {
                 />
             </Spacer>
         </SafeAreaView>
-        
 };
 const styles = StyleSheet.create({
     button: {  
