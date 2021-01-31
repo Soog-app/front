@@ -30,7 +30,7 @@ const AuthForm = ({ errorMessage, onSubmit, submitButtonText }) => {
                 {errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
             </Spacer>
             <Spacer>
-                <Button title={submitButtonText} onPress={() => onSubmit({ email, password })} />
+                <Button title={submitButtonText}  buttonStyle={styles.button}  onPress={() => onSubmit({ email, password })} />
             </Spacer>
         </>
     );
@@ -41,7 +41,17 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: 'red',
         marginLeft: 15
-    }
+    },
+    button: {  
+        backgroundColor: '#303F9F',
+        borderColor: '#303F9F',
+        borderWidth: 5,
+        borderRadius: 25,
+        justifyContent: 'center',
+        width: 400,
+     }
 });
 
 export default AuthForm;
+
+

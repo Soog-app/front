@@ -1,14 +1,14 @@
 import React from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
 
-const TrackListScreen = () => {
+const DemandsScreen = () => {
     return (
-            <ImageBackground source={require('../img/logo_soog2.png')} style={styles.background}>
+            <ImageBackground source={require('../img/logo_soog4.jpg')} style={styles.background}>
             </ImageBackground>
     );
 };
 
-TrackListScreen.navigationOptions = () => {
+DemandsScreen.navigationOptions = () => {
     return {
         headerShown: false,
     };
@@ -18,6 +18,5 @@ const styles = StyleSheet.create({
     background: {
             ...StyleSheet.absoluteFillObject
     }
-    
 });
-export default TrackListScreen;
+export default DemandsScreen;

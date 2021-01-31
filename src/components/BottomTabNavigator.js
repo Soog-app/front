@@ -3,6 +3,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import { createStackNavigator } from 'react-navigation-stack';
 import TrackListScreen from '../screens/TrackListScreen';
 import RentalScreen from '../screens/RentalScreen'
+import DemandsScreen from '../screens/DemandsScreen'
 import TrackDetailScreen from '../screens/TrackDetailScreen';
 import TrackCreateScreen from '../screens/TrackCreateScreen';
 import AccountScreen from '../screens/AccountScreen';
@@ -24,6 +25,16 @@ export default createMaterialBottomTabNavigator(
                 title: 'Recherche',
                 tabBarIcon: ({ tintColor }) => {
                     return <MaterialCommunityIcons name='magnify' size={25} color={tintColor} />;
+                },
+            }
+        },
+
+        Demands: {
+            screen: DemandsScreen,
+            navigationOptions: {
+                title: 'Demandes',
+                tabBarIcon: ({ tintColor }) => {
+                    return <MaterialCommunityIcons name='mail' size={25} color={tintColor} />;
                 },
             }
         },
@@ -64,7 +75,6 @@ export default createMaterialBottomTabNavigator(
         }
     },
     {
-        initialRouteName: 'Account',
         activeColor: '#e8eaf6',
         inactiveColor: '#c5cae9',
         barStyle: styles.tabsStyle,
