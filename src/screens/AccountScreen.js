@@ -5,7 +5,6 @@ import { SafeAreaView } from 'react-navigation';
 import Spacer from '../components/Spaces';
 import { Context as AuthContext } from '../context/AuthContext';
 
-
 const AccountScreen = () => {
     const { signout } = useContext(AuthContext);
     return <SafeAreaView forceInset={{ top: 'always' }}>
