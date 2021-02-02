@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { StyleSheet } from 'react-native';
 import { Text } from 'react-native-elements';
 import { withNavigationFocus } from 'react-navigation';
 import Map from '../components/Map';
@@ -17,7 +16,5 @@ const TrackCreateScreen = ({ isFocused }) => {
         </>
     );
 };
-
-const styles = StyleSheet.create({});
 
 export default withNavigationFocus(TrackCreateScreen);

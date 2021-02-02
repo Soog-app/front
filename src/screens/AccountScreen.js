@@ -17,7 +17,7 @@ const AccountScreen = () => {
                 onPress={signout} 
                 />
             </Spacer>
-        </SafeAreaView>
+        </SafeAreaView>;
 };
 const styles = StyleSheet.create({
     button: {  
@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
        borderWidth: 5,
        borderRadius: 25    
     }
- })
+ });
 
 export default AccountScreen;

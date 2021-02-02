@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Text, Button, Input } from 'react-native-elements';
 import Spacer from './Spaces';
+import PropTypes from 'prop-types';
 
 const AuthForm = ({ errorMessage, onSubmit, submitButtonText }) => {
     const [email, setEmail] = useState('');
@@ -36,13 +37,19 @@ const AuthForm = ({ errorMessage, onSubmit, submitButtonText }) => {
     );
 };
 
+AuthForm.propTypes = {
+    errorMessage: PropTypes.string,
+    onSubmit: PropTypes.func,
+    submitButtonText: PropTypes.string
+};
+
 const styles = StyleSheet.create({
     errorMessage: {
         fontSize: 16,
         color: 'red',
         marginLeft: 15
     },
-    button: {  
+    button: {
         backgroundColor: '#303F9F',
         borderColor: '#303F9F',
         borderWidth: 5,
